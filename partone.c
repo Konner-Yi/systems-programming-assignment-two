@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <time.h>
 
 //Initialize unsigned long long values used in functions
 unsigned long long num = 0; //Expected: 1 000 000 000
@@ -35,11 +36,15 @@ void* calc_even(void* arg) {
 }
 
 int main(int argc, char *argv[]) { //Remember to command line in 1000000000
+    //Variables for time and initializing threads
+    clock_t start_time, end_time;
+    double time_spent;
     pthread_t thread1, thread2;
     
     //Converts 1 000 000 000 to unsigned long
     num = strtoull(argv[1], NULL, 10);
     
+    start_time = clock();
     printf("Parent Thread: ID = %lu\n", pthread_self());
 
     // Create both threads
@@ -57,6 +62,11 @@ int main(int argc, char *argv[]) { //Remember to command line in 1000000000
     //Calculate division
     double divide = (double)sum_all / (double)sum_even;
     printf("Sum1/Sum2 = %.2f\n", divide);
+
+    //Ends the time and calculates the final time IN SECONDS
+    end_time = clock();
+    time_spent = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Final time:%.6f", time_spent);
 
     return 0;
 }

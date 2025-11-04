@@ -3,12 +3,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main(int argc, char *argv[]) { //Remember to command line in 1000000000
+    //Variables to time the process
+    clock_t start_time, end_time;
+    double time_spent;
     
     //Converts 1 000 000 000 to unsigned long
     unsigned long long num = strtoull(argv[1], NULL, 10);
-
+    
+    //Starts the time
+    start_time = clock();
+    
     //All numbers sum
     unsigned long long sum_all  = 0;
     for (unsigned long long i = 1; i <= num; i++) {
@@ -27,6 +34,12 @@ int main(int argc, char *argv[]) { //Remember to command line in 1000000000
     //Calculate division
     double divide = (double)sum_all / (double)sum_even;
     printf("Sum1/Sum2 = %.2f\n", divide);
+    
+    //Ends the time and calculates the final time IN SECONDS
+    end_time = clock();
+    time_spent = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Final time:%.6f", time_spent);
+    
 
     return 0;
 }
