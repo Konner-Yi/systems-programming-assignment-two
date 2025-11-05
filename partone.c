@@ -1,7 +1,7 @@
 //Group 23
 //Assignment 2 Part 1
 //By Konner
-
+//Mavrick
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) { //Remember to command line in 1000000000
     //Ends the time and calculates the final time IN SECONDS
     end_time = clock();
     time_spent = (double)(end_time - start_time) / CLOCKS_PER_SEC;
-    printf("Final time:%.6f", time_spent);
+    printf("Final time:%.6f\n", time_spent);
 
     return 0;
 }
