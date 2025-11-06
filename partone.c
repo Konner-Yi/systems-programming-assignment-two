@@ -2,6 +2,7 @@
 //Assignment 2 Part 1
 //By Konner
 //Mavrick
+//Gordon
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>

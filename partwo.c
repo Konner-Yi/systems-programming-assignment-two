@@ -2,7 +2,7 @@
 //Assignment 2 Part 2
 //By Konner
 //Mavrick
-
+//Gordon
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
